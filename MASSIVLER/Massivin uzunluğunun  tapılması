@@ -1,0 +1,8 @@
+DECLARE
+  TYPE a IS VARRAY(100) OF INTEGER;
+  v_name a;
+BEGIN
+  v_name:=a(10,-89,76,34,-87,23,34,65,90);
+  
+  DBMS_OUTPUT.PUT_LINE('Massivin uzunlugu: ' ||v_name.count);
+END;
