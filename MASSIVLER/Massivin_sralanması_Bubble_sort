@@ -1,0 +1,24 @@
+DECLARE
+    TYPE vint IS
+        VARRAY(100) OF INTEGER;
+    massiv  vint;
+    v_data  INTEGER;
+BEGIN
+    massiv := vint(30, 87, -60, 1, 54,
+                  0, 100, 34, -45, 88);
+
+    FOR i IN 1..massiv.count - 1 LOOP
+        FOR j IN 1..massiv.count - i LOOP
+            IF massiv(j) > massiv(j + 1) THEN
+                v_data := massiv(j);
+                massiv(j) := massiv(j + 1);
+                massiv(j + 1) := v_data;
+            END IF;
+        END LOOP;
+    END LOOP;
+
+    FOR i IN 1..massiv.count LOOP
+        dbms_output.put_line(massiv(i));
+    END LOOP;
+
+END;
