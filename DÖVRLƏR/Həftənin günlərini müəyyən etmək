@@ -1,0 +1,23 @@
+DECLARE
+    v_date  DATE := TO_DATE('&v_user_date', 'DD-MM-YYYY');
+    v_day   VARCHAR2(10);
+BEGIN
+    v_day := to_char(v_date, 'D');
+    CASE v_day
+        WHEN '1' THEN
+            dbms_output.put_line('Today is Sunday');
+        WHEN '2' THEN
+            dbms_output.put_line('Today is Monday');
+        WHEN '3' THEN
+            dbms_output.put_line('Today is Tuesday');
+        WHEN '4' THEN
+            dbms_output.put_line('Today is Wednesday');
+        WHEN '5' THEN
+            dbms_output.put_line('Today is Thursday');
+        WHEN '6' THEN
+            dbms_output.put_line('Today is Friday');
+        WHEN '7' THEN
+            dbms_output.put_line('Today is Saturday');
+    END CASE;
+
+END;
