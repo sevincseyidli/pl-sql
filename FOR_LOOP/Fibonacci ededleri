@@ -1,0 +1,15 @@
+DECLARE
+    v_count NUMBER := 10;
+    a       NUMBER := 0;
+    b       NUMBER := 1;
+    c       NUMBER;
+BEGIN
+    FOR i IN 1..10 LOOP
+        c := b + a;
+        a := b;
+        b := c;
+
+
+        dbms_output.put_line('FIBONACCI EDEDLERI ' || c);
+    END LOOP;
+END;
